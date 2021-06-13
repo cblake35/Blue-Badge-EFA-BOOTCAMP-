@@ -9,6 +9,7 @@ const controllers = require("./controllers");
 app.use(Express.json());
 
 app.use("/user", controllers.userController);
+// app.use(require("./middleware/validate-jwt")); //anything beneath this will require a token to access(theyre protected)
 app.use("/journal", controllers.journalController);
 
 dbConnection.authenticate()
