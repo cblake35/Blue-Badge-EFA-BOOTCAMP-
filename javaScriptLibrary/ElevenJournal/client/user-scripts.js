@@ -5,7 +5,7 @@ function userSignUp() {
     //  console.log('userSignUp Function Called')
 
     let userEmail = document.getElementById("emailSignup").value;
-    let userPass = document.getElementById(pwdSignup).value;
+    let userPass = document.getElementById("pwdSignup").value;
 
     let newUserData = {
         user: {
