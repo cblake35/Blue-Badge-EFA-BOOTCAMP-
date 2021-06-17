@@ -3,6 +3,8 @@ const app = Express();
 const dbConnection = require("./db");
 require("dotenv").config();
 
+app.use(require("./middleware/header")); //headers must ALWAYS come before routes are declared
+
 const controllers = require("./controllers");
 
 //this line needs to be above any routes for the routes to use express.json(). If not, code will break
