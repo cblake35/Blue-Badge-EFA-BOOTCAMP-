@@ -15,7 +15,7 @@ function userSignUp() {
     };
     console.log(`newUserData --> ${newUserData.user.email} ${newUserData.user.password}`);
 
-    fetch('http://localhost:3000/user/register', {
+    fetch('http://localhost:3000/user/register', { //by default fetch request utilizes a "GET" request
         method: "POST",
         headers: {
             "Content-Type": "application/json"
