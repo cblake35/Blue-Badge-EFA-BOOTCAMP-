@@ -78,8 +78,15 @@ function userLogin() {
 ************************** */
 function userLogout() {
     // console.log('userLogout Function Called')
+    let display = document.getElementById('journals');
+    
     localStorage.setItem('SessionToken', undefined);
     console.log(`SessionToken --> ${localStorage.SessionToken}`);
+
+    for (let i = 0; i < display.childNodes.length; i++) {
+        display.removeChild(display.firstChild);
+    }
+
     tokenChecker();
 }
 
@@ -89,5 +96,22 @@ function userLogout() {
 ************************** */
 function tokenChecker() {
     console.log('tokenChecker Function Called')
+
+    let display = document.getElementById('journals');
+    let header = document.createElement('h5');
+    let accessToken = localStorage.getItem('SessionToken');
+    let alertText = "Log in or sign up to get started!";
+
+    for (let i = 0; i < display.childNodes.length; i++) {
+        display.removeChild(display.firstChild);
+    }
+
+    if (accessToken === 'undefined') {
+        display.appendChild(header);
+        header.textContent = alertText;
+        header.setAttribute('id', 'defaultLogin');
+    } else {
+        null
+    }
 }
 tokenChecker()

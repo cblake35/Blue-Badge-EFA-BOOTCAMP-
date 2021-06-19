@@ -86,7 +86,7 @@ router.put("/update/:entryId", validateJWT, async (req, res) => {
     }
 })
 
-router.delete("/delte/:id", validateJWT, async (req, res) => {
+router.delete("/delete/:id", validateJWT, async (req, res) => {
     const ownerId = req.user.id;
     const journalId = req.params.id;
 
